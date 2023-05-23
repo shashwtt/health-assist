@@ -2,7 +2,8 @@
 import React from "react";
 import styles from "@/styles/Home.module.css";
 import Head from "next/head";
-import { RemoveCurtain } from "@/components/mist/mist";
+import { RemoveCurtain } from "@/components/curtain/Curtain";
+import Image from "next/image";
 
 const Home = () => {
 	React.useEffect(() => {
@@ -33,7 +34,22 @@ const Home = () => {
 
 			<main id="homePage" className={styles.main}>
 				<div className={styles.inner}>
-
+					<section>
+						<div className={styles.landerText}>
+							<h1>31 May —</h1>
+							<h1>World No Tobacco Day</h1>
+						</div>
+						<div className={styles.landerImg}>
+							<Image
+								src="/img/tobacco.jpg"
+								alt="tobacco"
+								className={styles.tobaccoImg}
+								width={640}
+								height={360}
+								priority
+							/>
+						</div>
+					</section>
 				</div>
 			</main>
 		</>

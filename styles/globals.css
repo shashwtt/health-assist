@@ -16,7 +16,8 @@ body {
   font-family: 'Helvetica';
 }
 :root {
-  --primary: #101010;
+  --primary: #131313;
+  --popup: #fff;
   --hh: 80px;
 }
 
@@ -49,9 +50,53 @@ a {
 }
 
 
+.bg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200vh;
+  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background-repeat: repeat;
+  animation: bg-animation .2s infinite;
+  opacity: 0.65;
+  visibility: visible;
+  pointer-events: none;
+  z-index: 350;
+}
+
+@keyframes bg-animation {
+    0% { transform: translate(0,0) }
+    10% { transform: translate(-5%,-5%) }
+    20% { transform: translate(-10%,5%) }
+    30% { transform: translate(5%,-10%) }
+    40% { transform: translate(-5%,15%) }
+    50% { transform: translate(-10%,5%) }
+    60% { transform: translate(15%,0) }
+    70% { transform: translate(0,10%) }
+    80% { transform: translate(-15%,0) }
+    90% { transform: translate(10%,5%) }
+    100% { transform: translate(5%,0) }
+}
 
 
 /*  <===== Miscelaneous =====>  */
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+  background: var(--primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(179, 179, 179, 0.232);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(179, 179, 179, 0.302);
+}
 
 ::selection {
   opacity: 0.8;
@@ -67,4 +112,17 @@ a {
 @font-face {
   font-family: 'Mont';
   src: url('/fonts/Mont.woff2');
+}
+
+@font-face {
+  font-family: 'HK_wide';
+  src: url('/fonts/HK_wide.otf');
+}
+@font-face {
+  font-family: 'sharlee';
+  src: url('/fonts/sharlee.woff2');
+}
+@font-face {
+  font-family: 'Polite';
+  src: url('/fonts/PoliteType-Regular.ttf');
 }
