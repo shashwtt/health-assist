@@ -4,6 +4,11 @@
   margin: 0;
 }
 
+html,
+body {
+  overflow-x: clip;
+}
+
 body {
   width: 100vw;
   height: auto;
@@ -19,7 +24,7 @@ body {
   --primary: #eee;
   --popup: #090909;
   --menu: #333;
-  --hh: 80px;
+  --hh: 60px;
 }
 
 #appWrapper {
@@ -62,8 +67,7 @@ a {
   background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
   background-repeat: repeat;
   animation: bg-animation .2s infinite;
-  opacity: .4;
-  visibility: none;
+  opacity: .8;
   pointer-events: none;
   z-index: 350;
 }
@@ -86,17 +90,18 @@ a {
 /*  <===== Miscelaneous =====>  */
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 6px;
   height: 10px;
   background: var(--primary);
+  padding-right: 3px;
+  display: none;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(179, 179, 179, 0.232);
-  border-radius: 10px;
+  background: #0004;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(179, 179, 179, 0.302);
+  background: #0006;
 }
 
 ::selection {
@@ -109,21 +114,15 @@ a {
     font-family: 'Helvetica';
     src: url('/fonts/Helvetica.woff2');
 }
-
-@font-face {
-  font-family: 'Mont';
-  src: url('/fonts/Mont.woff2');
-}
-
 @font-face {
   font-family: 'HK_wide';
   src: url('/fonts/HK_wide.otf');
 }
 @font-face {
-  font-family: 'sharlee';
-  src: url('/fonts/sharlee.woff2');
+  font-family: 'HK_bwide';
+  src: url('/fonts/HK_boldenWide.otf');
 }
 @font-face {
-  font-family: 'Polite';
-  src: url('/fonts/PoliteType-Regular.ttf');
+  font-family: 'sharlee';
+  src: url('/fonts/sharlee.woff2');
 }

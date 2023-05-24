@@ -50,8 +50,6 @@ function closeMenuAnimate() {
 	gsap.to(`.${styles.menuContainer}`, {
 		duration: 0.4,
 		delay: 0.1,
-		y: 0,
-		x: 0,
 		borderTopRightRadius: "6px",
 	});
 	gsap.to(`.${styles.menuContainer}`, {
@@ -69,6 +67,10 @@ function closeMenuAnimate() {
 			isAnimating = false;
 		}
 	});
+}
+
+function ReturnHeaderLane() {
+	return document.querySelector(`.${styles.headerLane}`);
 }
 
 function Header() {
@@ -93,7 +95,7 @@ function Header() {
 						<span></span>
 						<span></span>
 					</div>
-					{/* <h2>MENU</h2> */}
+					<h2>MENU</h2>
 				</div>
 			</div>
 
@@ -115,8 +117,11 @@ function Header() {
 				</div>
 				<div className={styles.menuFooter}></div>
 			</div>
+
+			<div className={styles.headerLane}></div>
 		</div>
 	);
 }
 
 export default Header;
+export {ReturnHeaderLane};
