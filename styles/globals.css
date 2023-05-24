@@ -16,8 +16,9 @@ body {
   font-family: 'Helvetica';
 }
 :root {
-  --primary: #131313;
-  --popup: #fff;
+  --primary: #eee;
+  --popup: #090909;
+  --menu: #333;
   --hh: 80px;
 }
 
@@ -61,8 +62,8 @@ a {
   background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
   background-repeat: repeat;
   animation: bg-animation .2s infinite;
-  opacity: 0.65;
-  visibility: visible;
+  opacity: .4;
+  visibility: none;
   pointer-events: none;
   z-index: 350;
 }

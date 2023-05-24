@@ -16,39 +16,30 @@
 	max-width: 1600px;
 	display: flex;
 	align-items: center;
-	justify-content: flex-end;
+	justify-content: space-between;
 	padding: 3em;
 }
 
 .header .logo {
 	color: var(--popup);
 	font-size: 1.6em;
-	font-family: 'HK_wide';
+	font-family: "HK_wide";
 	line-height: 1;
 	width: min-content;
 }
 
-.header .line {
-	width: 100%;
-	margin: 0 1em;
-	background-color: var(--popup);
-	height: 2px;
-	opacity: 0.5;
-	border-radius: 4px;
-
-}
-
 .header .menuBtn {
 	display: flex;
-	background-color: var(--popup);
+	background-color: var(--menu);
 	padding: 0.5em 1em;
 	border-radius: 6px;
 	font-weight: 900;
-	color: #444;
+	color: #fff;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
 	z-index: 35;
+	visibility: hidden;
 }
 
 .header .menuBtn h2 {
@@ -59,7 +50,6 @@
 .header .menuBtn .menuIcon {
 	height: 25px;
 	width: 25px;
-	margin-right: 1em;
 	position: relative;
 	rotate: 0deg;
 	transition: 0.5s ease-in-out;
@@ -78,7 +68,7 @@
 	position: relative;
 	height: 3px;
 	border-radius: 4px;
-	background-color: #444;
+	background-color: #eee;
 	transition: translate 0.4s ease-out 0.1s, rotate 0.2s ease-out,
 		scale 0.2s ease-out, width 0.2s ease-out;
 }
@@ -117,7 +107,9 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	overflow: hidden;
 }
+
 
 .header .menuContainer .menuItems {
 	width: 100%;
@@ -131,7 +123,7 @@
 .header .menuContainer .menuItems .menuItem {
 	width: 100%;
 	height: 70px;
-	/* border-top: 1px solid #1112; */
+	border-top: 1px solid #1112;
 	display: flex;
 	align-items: center;
 	padding: 0 55px;
@@ -169,8 +161,8 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: #33333311;
-	scale: 1 0.02;
+	background-color: #1111;
+	scale: 1 0;
 	transition: scale 0.2s ease-out;
 	transform-origin: top;
 }

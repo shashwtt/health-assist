@@ -35,10 +35,6 @@ const Home = () => {
 			<main id="homePage" className={styles.main}>
 				<div className={styles.inner}>
 					<section>
-						<div className={styles.landerText}>
-							<h1>31 May —</h1>
-							<h1>World No Tobacco Day</h1>
-						</div>
 						<div className={styles.landerImg}>
 							<Image
 								src="/img/tobacco.jpg"
@@ -49,7 +45,12 @@ const Home = () => {
 								priority
 							/>
 						</div>
+						<div className={styles.landerText}>
+							<h1>31 May —</h1>
+							<h1>World No Tobacco Day</h1>
+						</div>
 					</section>
+					<section></section>
 				</div>
 			</main>
 		</>

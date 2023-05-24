@@ -12,7 +12,7 @@
 	max-width: 1920px;
 	padding: 0 6em;
 	margin: 0 auto;
-	color: var(--popup);
+	color: var(--text);
 }
 
 .main section {
@@ -21,6 +21,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	padding: 0 3em;
 }
 
 .main .landerImg {
@@ -29,6 +30,8 @@
 	display: flex;
 	align-items: flex-end;
 	padding-bottom: 6em;
+	position: sticky;
+	top: 0;
 }
 
 .main .landerImg .tobaccoImg {

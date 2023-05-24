@@ -23,6 +23,7 @@ function openMenuAnimate() {
 		scale: 1,
 		duration: 0.4,
 		y: -6,
+		x: 6,
 		delay: 0.2,
 	});
 	gsap.to(`.${styles.menuItem} h2`, {
@@ -50,6 +51,7 @@ function closeMenuAnimate() {
 		duration: 0.4,
 		delay: 0.1,
 		y: 0,
+		x: 0,
 		borderTopRightRadius: "6px",
 	});
 	gsap.to(`.${styles.menuContainer}`, {
@@ -84,14 +86,14 @@ function Header() {
 	return (
 		<div className={styles.header}>
 			<div className={styles.inner}>
-				<h2 className={styles.logo}>NoTOBACCO.</h2>
+				<h2 className={styles.logo}>NTB.</h2>
 				<div className={styles.line}></div>
 				<div className={styles.menuBtn} id="menuBtn" onClick={__menuCallback}>
 					<div className={styles.menuIcon}>
 						<span></span>
 						<span></span>
 					</div>
-					<h2>MENU</h2>
+					{/* <h2>MENU</h2> */}
 				</div>
 			</div>
 
