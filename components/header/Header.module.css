@@ -23,20 +23,19 @@
 
 .header .headerLane {
 	position: absolute;
-	bottom: 0;
-	
+	bottom: 0;	
 	width: 100%;
-	height: 2px;
-	opacity: 0.5;
+	height: 1.5px;
+	opacity: 0;
 	background: var(--menu);
-	scale: 0 1;
 }
 
 .header .logo {
-	color: var(--popup);
+	color: var(--menu);
 	font-size: 1.6em;
 	font-family: "HK_wide";
 	line-height: 1;
+	font-weight: 100;
 	width: min-content;
 }
 
