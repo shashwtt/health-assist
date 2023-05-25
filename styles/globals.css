@@ -20,14 +20,15 @@ body {
   overflow-x: hidden;
   font-size: 14px !important;
   user-select: none;
-  background: #000000;
   position: relative;
+  background: var(--primary);
   font-family: 'Helvetica';
 }
 :root {
   --primary: #e9e9e9;
   --popup: #ddd;
   --menu: #222;
+  --text: #111;
   --hh: 60px;
 }
 

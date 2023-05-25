@@ -5,12 +5,22 @@
 	flex-direction: column;
 	align-items: center;
 	position: relative;
+	opacity: 0;
+}
+
+.fakeLane {
+	width: 100vw;
+	height: 0;
+	position: fixed;
+	bottom: 0;
+	z-index: 28;
+	background-color: #ADADAD;
+	transform-origin: top;
 }
 
 .main .inner {
 	width: 100%;
 	max-width: 1920px;
-	/* padding: 0 1em; */
 	margin: 0 auto;
 	color: var(--text);
 }
@@ -42,6 +52,7 @@
 	justify-content: flex-end;
 }
 
+
 .main .headerLane {
 	width: 100%;
 	position: relative;
@@ -72,6 +83,7 @@
 	font-family: "Helvetica";
 	font-size: 1em;
 	font-weight: 500;
+	opacity: 0;
 }
 
 .main .sec1 .sinner {
@@ -87,29 +99,56 @@
 	background: var(--primary);
 }
 
-.main .tobaccoImg {
-	filter: grayscale(0.2);
+.main .imgElm {
 	width: 100%;
 	max-width: 650px;
 	height: auto;
+	position: relative;
+}
+
+.main .tobaccoImg {
+	filter: grayscale(0.2);
+}
+
+.main .imgElm::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--imgTheme);
+	transition: 0.6s;
+	transform-origin: left;
+}
+
+.main .imgElm.imgLoaded::after {
+	scale: 0 1;
 }
 
 .main .landerText {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	/* justify-content: flex-end; */
 	height: 100%;
 	width: 100%;
 	padding: 1rem;
 	position: relative;
 	opacity: 0.9;
+	color: var(--text);
+	padding-left: 1.5rem;
 }
 
-.main .landerText h2 {
-	font-size: 8em;
-	font-family: "HK_wide";
-	line-height: 1;
+.main .landerText .asterisk {
+	height: 2.6em;
+	width: auto;
+	margin: 2em 1em 5em 0em;
+}
+
+.main .landerText .asterisk svg {
+	height: 100%;
+	width: auto;
+	fill: var(--menu);
 }
 
 .main .landerText h1 {
@@ -123,9 +162,9 @@
 
 .main .landerText h3 {
 	line-height: 1;
-	margin-top: 1.8em;
-	font-family: "scto";
-	opacity: 0.9;
-	display: none;
+	margin-top: 1.2em;
+	font-family: "Helvetica";
+	font-weight: 500;
+	opacity: 0.7;
 	max-width: 600px;
 }

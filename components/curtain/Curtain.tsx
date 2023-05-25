@@ -1,7 +1,6 @@
 import styles from "./Curtain.module.css";
 import React from "react";
 import { gsap } from "gsap";
-
 var direction_ = "right";
 
 function ThrowCurtain(CurtainThrown: any, direction: string) {
@@ -32,11 +31,11 @@ function RemoveCurtain() {
 		delay: 0.8,
 		duration: 1.2,
 		ease: "power4.in",
-    y: "-100vh",
+		y: "-100vh",
 		onComplete: () => {
 			if (curtain) {
 				gsap.set(curtain, { visibility: "hidden" });
-				gsap.set(curtain, { y: "-100vh"});
+				gsap.set(curtain, { y: "-100vh" });
 			}
 		},
 	});
@@ -47,7 +46,7 @@ function Curtain() {
 		<div className={styles.curtain} onClick={RemoveCurtain}>
 			<div className={styles.waiter}>
 				<div className={styles.waiting}></div>
-				<h2>loading..</h2>
+				<h2>loading...</h2>
 			</div>
 		</div>
 	);

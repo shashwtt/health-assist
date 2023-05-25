@@ -4,30 +4,10 @@ import type { AppProps } from "next/app";
 import Header from "@/components/header/Header";
 import Lenis from "@studio-freight/lenis";
 import Footer from "@/components/footer/Footer";
-import Curtain from "@/components/curtain/Curtain";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const lenisRef = React.useRef<Lenis | null>(null);
-
-  React.useEffect(() => {
-    lenisRef.current = new Lenis({
-      duration: 1.4,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    });
-
-    function raf(time: any) {
-      if (lenisRef.current) {
-        lenisRef.current.raf(time);
-        requestAnimationFrame(raf);
-      }
-    }
-
-    requestAnimationFrame(raf);
-  }, []);
-
   return (
     <React.StrictMode>
-      <Curtain />
       <div className="bg"></div>
       <div id="appWrapper">
         <Header />

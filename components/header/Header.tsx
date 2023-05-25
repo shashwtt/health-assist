@@ -1,10 +1,41 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, use } from "react";
 import styles from "./Header.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import { gsap } from "gsap";
 
 var isAnimating = false;
+var isLoaded = false;
+
+function LoadingStart() {
+	isLoaded = false;
+}
+
+function LoadingEnd(__callback: () => void) {
+	isLoaded = true;
+	gsap.to(`.${styles.loadState}`, {
+		opacity: 0,
+		duration: 0.3,
+		onComplete: () => {
+			gsap.set(`.${styles.loadState}`, {
+				display: "none",
+			});
+		},
+	});
+	gsap.set(`.${styles.menuBtn}`, {
+		visibility: "visible",
+		opacity: 0,
+		delay: 0.2,
+		onComplete: () => {
+			__callback();
+		},
+	});
+	gsap.to(`.${styles.menuBtn}`, {
+		delay: 0.2,
+		duration: 0.3,
+		opacity: 1,
+	});
+}
 
 function openMenuAnimate() {
 	isAnimating = true;
@@ -34,7 +65,7 @@ function openMenuAnimate() {
 		delay: 0.3,
 		onComplete: () => {
 			isAnimating = false;
-		}
+		},
 	});
 }
 
@@ -65,7 +96,7 @@ function closeMenuAnimate() {
 		delay: 1,
 		onComplete: () => {
 			isAnimating = false;
-		}
+		},
 	});
 }
 
@@ -82,20 +113,29 @@ function Header() {
 		setMenuActive(!menuActive);
 	}
 
-	useEffect(() => {
-	}, []);
-
 	return (
 		<div className={styles.header}>
 			<div className={styles.inner}>
 				<h2 className={styles.logo}>NTB.</h2>
 				<div className={styles.line}></div>
-				<div className={styles.menuBtn} id="menuBtn" onClick={__menuCallback}>
-					<div className={styles.menuIcon}>
-						<span></span>
-						<span></span>
+				<div className={styles.nav}>
+					<div className={styles.loadState}>
+						<h2>Loading</h2>
+						<div className={styles.loadBars}>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
 					</div>
-					<h2>MENU</h2>
+
+					<div className={styles.menuBtn} id="menuBtn" onClick={__menuCallback}>
+						<div className={styles.menuIcon}>
+							<span></span>
+							<span></span>
+						</div>
+						<h2>MENU</h2>
+					</div>
 				</div>
 			</div>
 
@@ -124,4 +164,4 @@ function Header() {
 }
 
 export default Header;
-export {ReturnHeaderLane};
+export { ReturnHeaderLane, LoadingEnd, LoadingStart };
