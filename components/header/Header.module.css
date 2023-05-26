@@ -177,6 +177,21 @@
 	flex-direction: column;
 	justify-content: space-between;
 	overflow: hidden;
+	box-shadow: 0px 0px 50px 10px #2224;
+}
+
+.header .menuContainer::after {
+	content: '';
+	width: calc(100% - 4px);
+	height: calc(100% - 4px);
+	top: 0;
+	left: 0;
+	position: absolute;
+	filter: invert(.9);
+	opacity: .4;
+	pointer-events: none;
+	border: 2px solid var(--popup);
+	border-radius: inherit;
 }
 
 .header .menuContainer .menuItems {

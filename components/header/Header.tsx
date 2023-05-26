@@ -40,11 +40,12 @@ function LoadingEnd(__callback: () => void) {
 function openMenuAnimate() {
 	isAnimating = true;
 	const btn = document.querySelector(`#menuBtn`) as HTMLDivElement;
+	const nav = document.querySelector(`#nav`) as HTMLDivElement;
 	btn.classList.add(styles.active);
 	gsap.set(`.${styles.menuItem} h2`, { x: 20, opacity: 0 });
 	gsap.set(`.${styles.menuContainer}`, {
-		top: btn.offsetTop,
-		right: window.innerWidth - btn.offsetLeft - btn.offsetWidth,
+		top: nav.offsetTop + 5,
+		right: window.innerWidth - nav.offsetLeft - nav.offsetWidth,
 		scale: 0.4,
 		display: "flex",
 		borderTopRightRadius: "12px",
@@ -118,7 +119,7 @@ function Header() {
 			<div className={styles.inner}>
 				<h2 className={styles.logo}>NTB.</h2>
 				<div className={styles.line}></div>
-				<div className={styles.nav}>
+				<div className={styles.nav} id="nav">
 					<div className={styles.loadState}>
 						<h2>Loading</h2>
 						<div className={styles.loadBars}>

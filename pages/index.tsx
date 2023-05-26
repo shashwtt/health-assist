@@ -68,8 +68,8 @@ const Home = () => {
 								duration: 0.2,
 								delay: 0.4,
 								onComplete: () => {
-									ImgUnTheme('#landingImgCont');
-								}
+									ImgUnTheme("#landingImgCont");
+								},
 							});
 						});
 					},
@@ -96,23 +96,23 @@ const Home = () => {
 				image.removeEventListener("load", reduceImagesToLoad)
 			);
 		};
-	}, []);
+	});
 
 	useEffect(() => {
 		const imgThemes = document.querySelectorAll("[data-theme]");
-		imgThemes.forEach((img:any) => {
+		imgThemes.forEach((img: any) => {
 			const theme = img.getAttribute("data-theme");
 			if (theme) img.style.setProperty("--imgTheme", theme);
 		});
 
-
 		const tBar = document.querySelector(`.${styles.headerLane}`) as HTMLElement;
 		const hBar = ReturnHeaderLane();
-		gsap.to(`.${styles.scrollHint}`, {
+		const hint = document.querySelector(`.${styles.scrollHint}`) as HTMLElement;
+		gsap.to(hint, {
 			scrollTrigger: {
-				trigger: tBar,
-				start: "top " + tBar.offsetTop,
-				end: "top " + (tBar.offsetTop - 60),
+				trigger: hint,
+				start: "top " + hint.offsetTop,
+				end: "top " + (hint.offsetTop - 60),
 				scrub: true,
 			},
 			opacity: 0,
@@ -137,16 +137,26 @@ const Home = () => {
 			},
 			opacity: 0.2,
 		});
-		
-		// gsap.to(`.${styles.sinner}`, {
-		// 	scrollTrigger: {
-		// 		trigger: tBar,
-		// 		start: "top " + tBar.offsetHeight,
-		// 		end: "bottom 60",
-		// 		scrub: true,
-		// 	},
-		// 	y: tBar.offsetHeight - 60,
-		// })
+
+		const sinner = document.querySelector(`.${styles.sinner}`) as HTMLElement;
+		gsap.to(sinner, {
+			scrollTrigger: {
+				trigger: sinner,
+				start: "top " + sinner.offsetTop,
+				end: "bottom top",
+				scrub: true,
+			},
+			y: 200,
+			ease: "power0",
+		});
+
+		const themeTrigger1 = ScrollTrigger.create({
+			trigger: tBar,
+			start: "bottom top+=60",
+			end: "bottom top",
+			onEnter: () => changeTheme(themes.asthma),
+			onLeaveBack: () => changeTheme(themes.default),
+		});
 
 		const asterisk = document.querySelector(
 			`.${styles.asterisk}`
@@ -163,12 +173,56 @@ const Home = () => {
 				rotate: -100,
 			});
 		}
+
+		return () => {
+			themeTrigger1.kill();
+		};
 	});
 
 	function ImgUnTheme(imgSelector: string) {
 		const img = document.querySelector(imgSelector) as HTMLElement;
 		img.classList.add(styles.imgLoaded);
 	}
+
+	function changeTheme(colors: { [key: string]: string }) {
+		console.log("setting new theme, colors: ", colors);
+		gsap.to(":root", { ...colors, duration: 0.3 });
+	}
+
+	const themes = {
+		default: {
+			"--primary": "#e9e9e9",
+			"--menu": "#222",
+			"--text": "#111",
+			"--popup": "#eee",
+		},
+		asthma: {
+			"--primary": "#DEE2E9",
+			"--menu": "#222",
+			"--text": "#111",
+			"--popup": "#edf0f5",
+		},
+	};
+
+	useEffect(() => {
+		gsap.set(`.${styles.sec2} .${styles.content}`, {
+			scale: 0.9,
+			opacity: 0.4,
+			y: 200,
+		});
+		gsap.to(`.${styles.sec2} .${styles.content}`, {
+			scrollTrigger: {
+				trigger: `.${styles.sec2}`,
+				start: "top bottom",
+				end: "top bottom-=400",
+				scrub: true,
+			},
+			y: -50,
+			opacity: 1,
+			scale: 1,
+			duration: 0.4,
+		})
+	}, []);
 
 	return (
 		<>
@@ -186,7 +240,11 @@ const Home = () => {
 							<div className={styles.scrollHint}>(TRY SCROLLING)</div>
 						</div>
 						<div className={styles.sinner}>
-							<div className={styles.imgElm} id='landingImgCont' data-theme="#b6b5aF">
+							<div
+								className={styles.imgElm}
+								id="landingImgCont"
+								data-theme="#b6b5aF"
+							>
 								<Image
 									src="/img/tobacco.jpg"
 									alt="tobacco"
@@ -210,19 +268,47 @@ const Home = () => {
 								</div>
 								<div>
 									<h1>About 1 in 10 people,</h1>
-									<h1>suffer from extreme asthma!</h1>
+									<h1>suffer from asthma disease!</h1>
 								</div>
 								<h3>
-									It's a chronic disease that affects the airways, causing
-									inflammation, bronchoconstriction, and increased mucus
-									production, which results in recurrent episodes of coughing,
-									wheezing, shortness of breath, and chest tightness. A very
-									common disease yet unknown to many!
+									Day by day, the number of people suffering from asthma is
+									increasing. It is a very common disease yet unknown to many.
+									This website is an attempt to spread awareness about asthma
+									and its causes while also helping you to achieve a better
+									health and future safety from asthma.
+									<br />
+									Let's learn more about it!
 								</h3>
 							</div>
 						</div>
 					</section>
-					<section className={styles.sec2}></section>
+					<section className={styles.sec2}>
+						<div className={styles.content}>
+							<div className={styles.topicTitle}>
+								So, What exactly is asthma?
+							</div>
+							<div className={styles.topicText}>
+								Asthma is a condition in which your airways narrow and swell and
+								may produce extra mucus. This can make breathing difficult and
+								trigger coughing, a whistling sound (wheezing) when you breathe
+								out and shortness of breath. For some people, asthma is a minor
+								nuisance. For others, it can be a major problem that interferes
+								with daily activities and may also lead to a life-threatening asthma
+								attack. It can happen to anyone and is a pretty common disease!
+							</div>
+							<div className={styles.dimgElm} id="diagramImgCont">
+								<Image
+									src="/img/th.jpg"
+									alt="asthma diagram"
+									width={350}
+									height={350}
+									quality={100}
+									priority
+									className={styles.diagramImg}
+								/>
+							</div>
+						</div>
+					</section>
 				</div>
 			</main>
 		</>
