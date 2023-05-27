@@ -158,6 +158,14 @@ const Home = () => {
 			onLeaveBack: () => changeTheme(themes.default),
 		});
 
+		const themeTrigger2 = ScrollTrigger.create({
+			trigger: `.${styles.sec3}`,
+			start: "top bottom-=250",
+			end: "top bottom -=450",
+			onEnter: () => changeTheme(themes.cure),
+			onLeaveBack: () => changeTheme(themes.asthma),
+		});
+
 		const asterisk = document.querySelector(
 			`.${styles.asterisk}`
 		) as HTMLElement;
@@ -176,6 +184,7 @@ const Home = () => {
 
 		return () => {
 			themeTrigger1.kill();
+			themeTrigger2.kill();
 		};
 	});
 
@@ -197,10 +206,16 @@ const Home = () => {
 			"--popup": "#eee",
 		},
 		asthma: {
-			"--primary": "#DEE2E9",
+			"--primary": "#d7dde8",
 			"--menu": "#222",
 			"--text": "#111",
 			"--popup": "#edf0f5",
+		},
+		cure: {
+			"--primary": "#e4efe1",
+			"--menu": "#222",
+			"--text": "#111",
+			"--popup": "#e6f3e2",
 		},
 	};
 
@@ -209,6 +224,7 @@ const Home = () => {
 			scale: 0.9,
 			opacity: 0.4,
 			y: 200,
+			width: 1200,
 		});
 		gsap.to(`.${styles.sec2} .${styles.content}`, {
 			scrollTrigger: {
@@ -217,11 +233,52 @@ const Home = () => {
 				end: "top bottom-=400",
 				scrub: true,
 			},
-			y: -50,
+			y: 0,
 			opacity: 1,
 			scale: 1,
 			duration: 0.4,
-		})
+		});
+		gsap.to(`.${styles.sec2} .${styles.content}`, {
+			scrollTrigger: {
+				trigger: `.${styles.sec2}`,
+				start: "top bottom-=400",
+				end: "top top+=80",
+				scrub: true,
+			},
+			width: "100%",
+			borderRadius: 0,
+			margin: 0,
+		});
+
+		gsap.set(`.${styles.sec3} .${styles.content}`, {
+			scale: 0.9,
+			opacity: 0.4,
+			y: 200,
+			width: 1200,
+		});
+		gsap.to(`.${styles.sec3} .${styles.content}`, {
+			scrollTrigger: {
+				trigger: `.${styles.sec3}`,
+				start: "top bottom",
+				end: "top bottom-=400",
+				scrub: true,
+			},
+			y: 0,
+			opacity: 1,
+			scale: 1,
+			duration: 0.4,
+		});
+		gsap.to(`.${styles.sec3} .${styles.content}`, {
+			scrollTrigger: {
+				trigger: `.${styles.sec3}`,
+				start: "top bottom-=400",
+				end: "top top+=80",
+				scrub: true,
+			},
+			width: "100%",
+			borderRadius: 0,
+			margin: 0,
+		});
 	}, []);
 
 	return (
@@ -284,28 +341,63 @@ const Home = () => {
 					</section>
 					<section className={styles.sec2}>
 						<div className={styles.content}>
-							<div className={styles.topicTitle}>
-								So, What exactly is asthma?
+							<div className={styles.conner}>
+								<div className={styles.topicTitle}>
+									So, What exactly is asthma?
+								</div>
+								<div className={styles.topicText}>
+									Asthma is a condition in which your airways narrow and swell
+									and may produce extra mucus. This can make breathing difficult
+									and trigger coughing, a whistling sound (wheezing) when you
+									breathe out and shortness of breath. For some people, asthma
+									is a minor nuisance. For others, it can be a major problem
+									that interferes with daily activities and may also lead to a
+									life-threatening asthma attack. It can happen to anyone and is
+									a pretty common disease!
+								</div>
+								<div className={styles.dimgElm} id="diagramImgCont">
+									<Image
+										src="/img/th.jpg"
+										alt="asthma diagram"
+										width={350}
+										height={350}
+										quality={100}
+										unoptimized={true}
+										priority
+										className={styles.diagramImg}
+									/>
+								</div>
 							</div>
-							<div className={styles.topicText}>
-								Asthma is a condition in which your airways narrow and swell and
-								may produce extra mucus. This can make breathing difficult and
-								trigger coughing, a whistling sound (wheezing) when you breathe
-								out and shortness of breath. For some people, asthma is a minor
-								nuisance. For others, it can be a major problem that interferes
-								with daily activities and may also lead to a life-threatening asthma
-								attack. It can happen to anyone and is a pretty common disease!
-							</div>
-							<div className={styles.dimgElm} id="diagramImgCont">
-								<Image
-									src="/img/th.jpg"
-									alt="asthma diagram"
-									width={350}
-									height={350}
-									quality={100}
-									priority
-									className={styles.diagramImg}
-								/>
+						</div>
+					</section>
+					<section className={styles.sec3}>
+						<div className={styles.content}>
+							<div className={styles.conner}>
+								<div className={styles.topicTitle}>
+									So, What exactly is asthma?
+								</div>
+								<div className={styles.topicText}>
+									Asthma is a condition in which your airways narrow and swell
+									and may produce extra mucus. This can make breathing difficult
+									and trigger coughing, a whistling sound (wheezing) when you
+									breathe out and shortness of breath. For some people, asthma
+									is a minor nuisance. For others, it can be a major problem
+									that interferes with daily activities and may also lead to a
+									life-threatening asthma attack. It can happen to anyone and is
+									a pretty common disease!
+								</div>
+								<div className={styles.dimgElm} id="diagramImgCont">
+									<Image
+										src="/img/th.jpg"
+										alt="asthma diagram"
+										width={350}
+										height={350}
+										quality={100}
+										unoptimized={true}
+										priority
+										className={styles.diagramImg}
+									/>
+								</div>
 							</div>
 						</div>
 					</section>
