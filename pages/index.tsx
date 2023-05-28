@@ -212,10 +212,10 @@ const Home = () => {
 			"--popup": "#edf0f5",
 		},
 		cure: {
-			"--primary": "#e4efe1",
+			"--primary": "#efe1e5",
 			"--menu": "#222",
 			"--text": "#081904",
-			"--popup": "#e6f3e2",
+			"--popup": "#efe1e5",
 		},
 	};
 
@@ -279,7 +279,7 @@ const Home = () => {
 			width: "100%",
 			borderRadius: 0,
 			margin: 0,
-			padding: "80px 0"
+			padding: "80px 0",
 		});
 
 		const cureEls = document.querySelectorAll(`.${styles.cure}`);
@@ -363,6 +363,16 @@ const Home = () => {
 									life-threatening asthma attack. It can happen to anyone and is
 									a pretty common disease!
 								</div>
+								<div className={styles.topicText}>
+									Asthma is a condition in which your airways narrow and swell
+									and may produce extra mucus. This can make breathing difficult
+									and trigger coughing, a whistling sound (wheezing) when you
+									breathe out and shortness of breath. For some people, asthma
+									is a minor nuisance. For others, it can be a major problem
+									that interferes with daily activities and may also lead to a
+									life-threatening asthma attack. It can happen to anyone and is
+									a pretty common disease!
+								</div>
 								<div className={styles.dimgElm} id="diagramImgCont">
 									<Image
 										src="/img/th.jpg"
@@ -375,6 +385,79 @@ const Home = () => {
 										className={styles.diagramImg}
 									/>
 								</div>
+								<br />
+								<br />
+								<br />
+								<div className={styles.topicTitle}>And, How is it caused?</div>
+								<div className={styles.topicText}>
+									<b>The exact cause of asthma is not fully understood</b>, but
+									it is believed to result from a combination of genetic and
+									environmental factors. There could by many reasons for the
+									cause of asthma. Here are some key factors that contribute to
+									the development of asthma within your body —
+								</div>
+								<ul>
+									<li>
+										<h2>Genetic predisposition</h2>
+										<h3>
+											Asthma tends to run in families, suggesting a genetic
+											component. If you have a family history of asthma, you may
+											be more likely to develop the condition.
+										</h3>
+									</li>
+									<li>
+										<h2>Environmental allergens</h2>
+										<h3>
+											Exposure to certain substances and allergens can trigger
+											asthma symptoms in susceptible individuals. Common
+											triggers include pollen, dust mites, pet dander, mold
+											spores, and certain chemicals or irritants in the
+											environment.
+										</h3>
+									</li>
+									<li>
+										<h2>Respiratory infections</h2>
+										<h3>
+											Viral respiratory infections, particularly in early
+											childhood, have been associated with an increased risk of
+											developing asthma. Certain respiratory viruses can cause
+											inflammation in the airways and contribute to the
+											development of asthma in susceptible individuals.
+										</h3>
+									</li>
+									<li>
+										<h2>Obesity</h2>
+										<h3>
+											Obesity has been linked to an increased risk of developing
+											asthma. The exact mechanisms are not fully understood, but
+											it is believed that the inflammation associated with
+											obesity can affect the airways and contribute to asthma
+											symptoms.
+										</h3>
+									</li>
+									<li>
+										<h2>Occupational factors & Air Pollution</h2>
+										<h3>
+											Certain workplace environments or exposures to substances
+											like chemicals, dust, or fumes can contribute to the
+											development or exacerbation of asthma in some individuals.
+											Also, Exposure to air pollution, such as vehicle exhaust,
+											industrial emissions, and particulate matter, can irritate
+											the airways and trigger asthma symptoms or worsen existing
+											asthma.
+										</h3>
+									</li>
+									<li>
+										<h2>Allergic reactions</h2>
+										<h3>
+											Some people with asthma have allergic reactions to
+											specific substances, such as pollen, dust, or certain
+											foods. When exposed to these allergens, their immune
+											system reacts by releasing chemicals that cause
+											inflammation and constriction of the airways.
+										</h3>
+									</li>
+								</ul>
 							</div>
 						</div>
 					</section>
