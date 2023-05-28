@@ -8,6 +8,7 @@ import { gsap } from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { ReturnHeaderLane } from "@/components/header/Header";
 import { LoadingEnd } from "@/components/header/Header";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -206,16 +207,16 @@ const Home = () => {
 			"--popup": "#eee",
 		},
 		asthma: {
-			"--primary": "#d7dde8",
+			"--primary": "#dbe5eb",
 			"--menu": "#222",
 			"--text": "#111",
-			"--popup": "#edf0f5",
+			"--popup": "#dbe5eb",
 		},
 		cure: {
-			"--primary": "#efe1e5",
+			"--primary": "#ebdfdb",
 			"--menu": "#222",
 			"--text": "#081904",
-			"--popup": "#efe1e5",
+			"--popup": "#ebdfdb",
 		},
 	};
 
@@ -245,10 +246,8 @@ const Home = () => {
 				end: "top top+=80",
 				scrub: true,
 			},
-			width: "100%",
-			borderRadius: 0,
-			padding: "80px 0",
-			margin: 0,
+			width: 1400,
+			padding: "3em 0",
 		});
 
 		gsap.set(`.${styles.sec3} .${styles.content}`, {
@@ -276,10 +275,8 @@ const Home = () => {
 				end: "top center-=200",
 				scrub: true,
 			},
-			width: "100%",
-			borderRadius: 0,
-			margin: 0,
-			padding: "80px 0",
+			width: 1400,
+			padding: "3em 0",
 		});
 
 		const cureEls = document.querySelectorAll(`.${styles.cure}`);
@@ -547,6 +544,72 @@ const Home = () => {
 											unoptimized={true}
 										/>
 									</div>
+								</div>
+								<br />
+								<br />
+								<br />
+								<div className={styles.topicTitle}>
+									Hey, But how can I avoid asthma attacks?
+								</div>
+								<div className={styles.topicText}>
+									The best way to avoid asthma attacks is to avoid triggers and
+									take your medication as prescribed by your doctor. Staying
+									away from things that trigger your asthma is the best way to
+									prevent an asthma attack. You can also avoid going outside
+									when the air quality is poor or when there are high levels of
+									pollen in the air.
+								</div>
+								<br />
+								<br />
+								<div className={styles.topicTitle}>
+									<h5>So, How do I know if it's okay to go out?</h5>
+								</div>
+								<div className={styles.topicText}>
+									Well, Good for you we have a solution for that too! We have
+									developed a system that will tell you if it's okay to go out
+									or not. It will also tell you the air quality of your area and
+									also the pollen count. So, you can take the necessary
+									precautions before going out. You can also check the air
+									quality of any area you want.
+								</div>
+								<div className={styles.ad}>
+									<Image
+										src="/img/sky.jpg"
+										alt="Air Tracker BG"
+										width={0}
+										height={0}
+										priority={true}
+										unoptimized={true}
+										className={styles.adImg}
+									/>
+									<h2>NTA Air Tracker</h2>
+									<Link href="/airtracker">
+										<div className={styles.adBtn}>
+											Check Air Quality
+											<span>→</span>
+										</div>
+									</Link>
+								</div>
+								<br />
+								<br />
+								<br />
+								<div className={styles.topicTitle}>
+									<h5>Can I somehow predict asthma?</h5>
+								</div>
+								<div className={styles.topicText}>
+									Yes, It is possible to predict asthma for a child of 3 years
+									or less if they have had any wheezing episodes recently. We use a Asthma Predictive Index (API) test to check wether
+									the child will develop persistent asthhma during the age of
+									6-13. You can use our tool to predict if a child is likely to get asthma —
+								</div>
+								<div className={styles.ad}>
+									<h2>NTA Air Tracker</h2>
+									<Link href="/airtracker">
+										<div className={styles.adBtn}>
+											Check Air Quality
+											<span>→</span>
+										</div>
+									</Link>
 								</div>
 							</div>
 						</div>

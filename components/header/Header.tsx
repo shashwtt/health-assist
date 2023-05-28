@@ -144,7 +144,9 @@ function Header() {
 				<div className={styles.menuItems}>
 					<div className={styles.menuShade}></div>
 					<div className={styles.menuItem}>
-						<h2>Home</h2>
+						<h2>
+							<Link href="/">Home</Link>
+						</h2>
 					</div>
 					<div className={styles.menuItem}>
 						<h2>About</h2>

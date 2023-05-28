@@ -1,0 +1,12 @@
+.main {
+    background-color: #fff;
+    border: 2px solid #777;
+    margin: 1em;
+    margin-top: calc(60px);
+    width: calc(100% - 2em);
+    min-height: unset;
+    height: calc(100vh - 60px - 1em);
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px #0001;
+}
+
