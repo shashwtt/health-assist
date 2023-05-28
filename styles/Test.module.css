@@ -1,0 +1,215 @@
+.main {
+    background-color: #fff;
+    border: 2px solid #777;
+    margin: 1em;
+    margin-top: calc(60px);
+    width: calc(100% - 2em);
+    min-height: unset;
+    height: calc(100vh - 60px - 1em);
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px #0001;
+    overflow: hidden;
+    position: relative;
+    color: var(--text);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .explain {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2em 3em;
+    position: relative;
+    z-index: 4;
+}
+
+.main .explain::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #000;
+    opacity: .2;
+    border-radius: 20px;
+}
+
+.main .explain::after {
+    content: '';
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-image: url("/img/bg.svg");
+    opacity: .1;
+}
+
+.main .test {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 2em;
+}
+
+.main .explain h1 {
+    margin-top: 1em;
+    font-family: 'HK_wide';
+    text-decoration: underline;
+}
+
+.main .explain h4 {
+    font-family: 'sharlee';
+    margin-top: 1em;
+    font-size: 1.5em;
+    font-weight: 500;
+    opacity: .8;
+}
+
+.main .test .questions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #0006;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.main .test .question {
+    background-color: #3331;
+    width: 100%;
+    height: auto;
+    display: flex;
+    border-bottom: 2px solid #0006;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main .test .question:nth-child(2n) {
+    background-color: #3332;
+}
+
+.main .test .question:last-child {
+    border-bottom: none;
+}
+
+.main .test .question h1 {
+    font-size: 1.4em;
+    font-weight: 600;
+    padding: .6rem 1rem;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    gap: .5em;
+}
+
+.main .test .question h1 span {
+    background-color: #0002;
+    aspect-ratio: 1/1;
+    height: 1.4em;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .test .question .btn {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-right: .7em;
+    cursor: pointer;
+}
+
+.main .test .question .btn input {
+    display: none;
+}
+
+.main .test .question .btn .knobs {
+    width: 5em;
+    height: 2em;
+    top: 0;
+    left: 0;
+    border-radius:5px;
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+    background-color: #0002;
+}
+
+.main .test .question .btn .knobs::before,
+.main .test .question .btn .knobs::after {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 5px;
+    width: 3em;
+    height: calc(100% - 4px);
+    display: flex;
+    padding: 0 .4em;
+    align-items: center;
+    justify-content: center;
+    font-family: 'HK_wide';
+    font-size: .8em;
+    opacity: 0;
+}
+
+.main .test .question .btn .knobs::before {
+    content: 'YES';
+    color: #fff;
+    background-color: rgb(120, 170, 45);
+    right: 2px;
+    left: unset;
+}
+.main .test .question .btn .knobs::after {
+    content: 'NO';
+    color: #fff;
+    background-color: rgb(170, 47, 45);
+}
+
+/* SHOW THE PSUEDO ELEMENTS IF THE checkbox input inside .btn is checked */
+.main .test .question .btn input:checked ~ .knobs::before {
+    opacity: 1;
+}
+
+/* Show if not checked */
+.main .test .question .btn input:not(:checked) ~ .knobs::after {
+    opacity: 1;
+}
+
+
+.main .test .result {
+    padding: 1em 1.5em;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+}
+
+.main .test .result .resultColor {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: .4;
+    z-index: -1;
+    border: 2px solid #000;
+    border-radius: inherit;
+}
+
+.main > .test > div > h2 {
+    margin-bottom: .5em;
+}

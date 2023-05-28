@@ -284,6 +284,7 @@
 	flex-direction: column;
 	min-height: 0;
 	padding: 0;
+	margin-bottom: 4em;
 }
 
 .main .sec3 .content {
@@ -466,6 +467,11 @@
 	margin-left: .8em;
 	font-size: 1.1em;
 	translate: -10px 0;
+	transition: translate 0.2s ease-out .1s;
+}
+
+.main .sec3 .ad .adBtn:hover span {
+	translate: 0 0;
 }
 
 .main .sec3 .ad .adImg {
@@ -474,7 +480,10 @@
 	height: 100%;
 	top: 0;
 	left: 0;
-	/* z-index: -1; */
+	object-fit: cover;
 	mix-blend-mode: multiply;
 	opacity: .7;
+}
+.main .sec3 .ad[ad-2] .adImg {
+	opacity: .2;
 }

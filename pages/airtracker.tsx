@@ -36,10 +36,12 @@ const AirTracker = () => {
 	return (
 		<>
 			<Head>
-				<title>LEARN ASTHMA.</title>
+				<title>NTA Air Tracker.</title>
 			</Head>
 
-			<main id="homePage" className={styles.main}></main>
+			<main id="airTracker" className={styles.main}>
+                
+            </main>
 		</>
 	);
 };

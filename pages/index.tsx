@@ -572,6 +572,7 @@ const Home = () => {
 									precautions before going out. You can also check the air
 									quality of any area you want.
 								</div>
+								<br />
 								<div className={styles.ad}>
 									<Image
 										src="/img/sky.jpg"
@@ -593,20 +594,35 @@ const Home = () => {
 								<br />
 								<br />
 								<br />
+								<br />
+								<br />
 								<div className={styles.topicTitle}>
 									<h5>Can I somehow predict asthma?</h5>
 								</div>
 								<div className={styles.topicText}>
-									Yes, It is possible to predict asthma for a child of 3 years
-									or less if they have had any wheezing episodes recently. We use a Asthma Predictive Index (API) test to check wether
-									the child will develop persistent asthhma during the age of
-									6-13. You can use our tool to predict if a child is likely to get asthma —
+									Yes, It is possible to predict the risk of developing asthma
+									in infants and and toddlers based on factors such as family
+									history, atopic dermatitis, allergic sensitization, and
+									wheezing symptoms. By assessing these risk factors, our risk
+									calculator can identify children who may be at a higher risk
+									of developing asthma later in life.
 								</div>
-								<div className={styles.ad}>
-									<h2>NTA Air Tracker</h2>
-									<Link href="/airtracker">
+								<br />
+
+								<div className={styles.ad} ad-2="true">
+									<Image
+										src="/img/bg.svg"
+										alt="Air Tracker BG"
+										width={0}
+										height={0}
+										priority={true}
+										unoptimized={true}
+										className={styles.adImg}
+									/>
+									<h2>Asthma Risk Calculator</h2>
+									<Link href="/test">
 										<div className={styles.adBtn}>
-											Check Air Quality
+											Conduct a test
 											<span>→</span>
 										</div>
 									</Link>
@@ -614,7 +630,6 @@ const Home = () => {
 							</div>
 						</div>
 					</section>
-					<section className={styles.sec4}></section>
 				</div>
 			</main>
 		</>

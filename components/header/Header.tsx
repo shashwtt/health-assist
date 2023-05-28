@@ -117,7 +117,9 @@ function Header() {
 	return (
 		<div className={styles.header}>
 			<div className={styles.inner}>
-				<h2 className={styles.logo}>NTA.</h2>
+				<h2 className={styles.logo}>
+					<Link href="/">NTA.</Link>
+				</h2>
 				<div className={styles.line}></div>
 				<div className={styles.nav} id="nav">
 					<div className={styles.loadState}>
