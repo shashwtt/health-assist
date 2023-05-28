@@ -214,7 +214,7 @@ const Home = () => {
 		cure: {
 			"--primary": "#e4efe1",
 			"--menu": "#222",
-			"--text": "#111",
+			"--text": "#081904",
 			"--popup": "#e6f3e2",
 		},
 	};
@@ -247,6 +247,7 @@ const Home = () => {
 			},
 			width: "100%",
 			borderRadius: 0,
+			padding: "80px 0",
 			margin: 0,
 		});
 
@@ -272,19 +273,26 @@ const Home = () => {
 			scrollTrigger: {
 				trigger: `.${styles.sec3}`,
 				start: "top bottom-=400",
-				end: "top top+=80",
+				end: "top center-=200",
 				scrub: true,
 			},
 			width: "100%",
 			borderRadius: 0,
 			margin: 0,
+			padding: "80px 0"
 		});
-	}, []);
+
+		const cureEls = document.querySelectorAll(`.${styles.cure}`);
+		cureEls.forEach((el: any) => {
+			const color = el.getAttribute("data-bg");
+			el.style.backgroundColor = color;
+		});
+	}, [themes.cure]);
 
 	return (
 		<>
 			<Head>
-				<title>NTB.</title>
+				<title>LEARN ASTHMA.</title>
 			</Head>
 
 			<div className={styles.fakeLane}></div>
@@ -373,34 +381,94 @@ const Home = () => {
 					<section className={styles.sec3}>
 						<div className={styles.content}>
 							<div className={styles.conner}>
-								<div className={styles.topicTitle}>
-									So, What exactly is asthma?
-								</div>
+								<div className={styles.topicTitle}>Can we cure asthma?</div>
 								<div className={styles.topicText}>
-									Asthma is a condition in which your airways narrow and swell
-									and may produce extra mucus. This can make breathing difficult
-									and trigger coughing, a whistling sound (wheezing) when you
-									breathe out and shortness of breath. For some people, asthma
-									is a minor nuisance. For others, it can be a major problem
-									that interferes with daily activities and may also lead to a
-									life-threatening asthma attack. It can happen to anyone and is
-									a pretty common disease!
+									<b>Unfortunately, there is currently no cure for asthma.</b>{" "}
+									However, the symptoms of asthma can be managed and controlled
+									with proper treatment and lifestyle modifications. Treatment
+									typically involves the use of medication, such as inhalers, to
+									manage symptoms and prevent asthma attacks. Some people also
+									benefit from allergy shots or immunotherapy to reduce
+									sensitivity to triggers. Here are some ways to reduce symptoms
+									of asthma —
 								</div>
-								<div className={styles.dimgElm} id="diagramImgCont">
-									<Image
-										src="/img/th.jpg"
-										alt="asthma diagram"
-										width={350}
-										height={350}
-										quality={100}
-										unoptimized={true}
-										priority
-										className={styles.diagramImg}
-									/>
+								<div className={styles.cures}>
+									<div className={styles.cure} data-bg="#a9cce1">
+										<h2>
+											<span>01</span>Follow your treatment plan
+										</h2>
+										<Image
+											src="/img/01.png"
+											className={styles.cureImg}
+											alt="Cure 01"
+											width={200}
+											height={200}
+											priority={true}
+											unoptimized={true}
+										/>
+									</div>
+									<div className={styles.cure} data-bg="#e1d9c6">
+										<h2>
+											<span>02</span>
+											Exercise regularly and safely!
+										</h2>
+										<Image
+											src="/img/02.png"
+											className={styles.cureImg}
+											alt="Cure 02"
+											width={200}
+											height={200}
+											priority={true}
+											unoptimized={true}
+										/>
+									</div>
+									<div className={styles.cure} data-bg="#b4ebd9">
+										<h2>
+											<span>03</span>Always Stay Clean and Hygienic!
+										</h2>
+										<Image
+											src="/img/03.png"
+											className={styles.cureImg}
+											alt="Cure 03"
+											width={200}
+											height={200}
+											priority={true}
+											unoptimized={true}
+										/>
+									</div>
+									<div className={styles.cure} data-bg="#eed0cb">
+										<h2>
+											<span>04</span>Avoid any allergies or germs!
+										</h2>
+										<Image
+											src="/img/04.png"
+											className={styles.cureImg}
+											alt="Cure 04"
+											width={200}
+											height={200}
+											priority={true}
+											unoptimized={true}
+										/>
+									</div>
+									<div className={styles.cure} data-bg="#dbc9de">
+										<h2>
+											<span>05</span>Stay away from stress and be calm
+										</h2>
+										<Image
+											src="/img/05.png"
+											className={styles.cureImg}
+											alt="Cure 05"
+											width={200}
+											height={200}
+											priority={true}
+											unoptimized={true}
+										/>
+									</div>
 								</div>
 							</div>
 						</div>
 					</section>
+					<section className={styles.sec4}></section>
 				</div>
 			</main>
 		</>

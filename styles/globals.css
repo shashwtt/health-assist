@@ -123,11 +123,3 @@ a {
   font-family: 'sharlee';
   src: url('/fonts/sharlee.woff2');
 }
-@font-face {
-  font-family: 'scto';
-  src: url('/fonts/scto-regular.woff');
-}
-@font-face {
-  font-family: 'scto-bold';
-  src: url('/fonts/scto-medium.woff');
-}

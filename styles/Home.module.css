@@ -240,8 +240,6 @@
 	object-position: top;
 }
 
-
-
 .main .sec3 {
 	justify-content: center;
 	height: auto;
@@ -259,7 +257,7 @@
 	justify-content: center;
 	color: var(--text);
 	font-family: "Helvetica";
-	background-color: #fff9;
+	background-color: #fff6;
 	border-radius: 10px;
 	box-shadow: 0 0 40px 1px #3332;
 	margin: 3em;
@@ -291,20 +289,73 @@
 	word-wrap: break-word;
 }
 
-.main .sec3 .dimgElm {
+.main .sec3 .cures {
+	margin-top: 4em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 2em;
 	width: 100%;
-	max-width: 570px;
-	height: min-content;
-	border-radius: 10px;
-	margin-top: 3rem;
-	border: 3px solid transparent;
+	height: max-content;
 }
 
-.main .sec3 .diagramImg {
-	border: 3px solid #77777776;
-	border-radius: inherit;
+.main .sec3 .cure {
 	width: 100%;
-	height: auto;
-	filter: grayscale(0.2);
-	object-position: top;
+	height: 300px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	border-radius: 20px;
+	border: 3px solid #fff4;
+}
+
+.main .sec3 .cure:nth-child(2n) {
+	flex-direction: row-reverse;
+}
+.main .sec3 .cure:nth-child(3) .cureImg {
+	scale: 1.3;
+}
+
+.main .sec3 .cure:nth-child(2n) h2 {
+	align-items: flex-end;
+}
+
+.main .sec3 .cure .cureImg {
+	width: auto;
+	height: 100%;
+}
+
+.main .sec3 .cure h2 {
+	font-size: 2rem;
+	color: var(--text);
+	display: flex;
+	flex-direction: column;
+	font-family: "sharlee";
+	opacity: 0.9;
+	word-wrap: break-word;
+	align-items: flex-start;
+	padding: 1em 2rem;
+}
+
+.main .sec3 .cure h2 span {
+	font-family: "HK_wide";
+	font-weight: 900;
+	font-size: 2.8rem;
+	opacity: 0.7;
+	position: relative;
+	padding-bottom: 0.2em;
+	margin-bottom: 1rem;
+}
+
+.main .sec3 .cure h2 span::after {
+	content: "";
+	width: 100%;
+	height: 3px;
+	background-color: var(--text);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	opacity: 0.45;
 }
