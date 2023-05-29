@@ -559,7 +559,7 @@ const Home = () => {
 									when the air quality is poor or when there are high levels of
 									pollen in the air.
 								</div>
-								<br />
+								{/* <br />
 								<br />
 								<div className={styles.topicTitle}>
 									<h5>So, How do I know if it's okay to go out?</h5>
@@ -572,8 +572,8 @@ const Home = () => {
 									precautions before going out. You can also check the air
 									quality of any area you want.
 								</div>
-								<br />
-								<div className={styles.ad}>
+								<br /> */}
+								<div className={styles.ad} ad-1="true">
 									<Image
 										src="/img/sky.jpg"
 										alt="Air Tracker BG"
@@ -591,8 +591,6 @@ const Home = () => {
 										</div>
 									</Link>
 								</div>
-								<br />
-								<br />
 								<br />
 								<br />
 								<br />

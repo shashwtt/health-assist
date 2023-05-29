@@ -487,3 +487,7 @@
 .main .sec3 .ad[ad-2] .adImg {
 	opacity: .2;
 }
+
+.main .sec3 .ad[ad-1] {
+	display: none;
+}

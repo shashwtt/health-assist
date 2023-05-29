@@ -146,18 +146,14 @@ function Header() {
 				<div className={styles.menuItems}>
 					<div className={styles.menuShade}></div>
 					<div className={styles.menuItem}>
-						<h2>
-							<Link href="/">Home</Link>
-						</h2>
+						<Link href="/">
+							<h2>Home</h2>
+						</Link>
 					</div>
 					<div className={styles.menuItem}>
-						<h2>About</h2>
-					</div>
-					<div className={styles.menuItem}>
-						<h2>support</h2>
-					</div>
-					<div className={styles.menuItem}>
-						<h2>contribute</h2>
+						<Link href="/test">
+						<h2>Asthma Predictor</h2>
+						</Link>
 					</div>
 				</div>
 				<div className={styles.menuFooter}></div>
