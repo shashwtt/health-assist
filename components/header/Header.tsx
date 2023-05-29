@@ -118,7 +118,7 @@ function Header() {
 		<div className={styles.header}>
 			<div className={styles.inner}>
 				<h2 className={styles.logo}>
-					<Link href="/">NTA.</Link>
+					<Link href="/">No&nbsp;To&nbsp;Asthma.</Link>
 				</h2>
 				<div className={styles.line}></div>
 				<div className={styles.nav} id="nav">

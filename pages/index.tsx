@@ -289,7 +289,7 @@ const Home = () => {
 	return (
 		<>
 			<Head>
-				<title>LEARN ASTHMA.</title>
+				<title>NTA - No To Asthma</title>
 			</Head>
 
 			<div className={styles.fakeLane}></div>
@@ -573,7 +573,7 @@ const Home = () => {
 									quality of any area you want.
 								</div>
 								<br /> */}
-								<div className={styles.ad} ad-1="true">
+							<div className={styles.ad} ad-1="true">
 									<Image
 										src="/img/sky.jpg"
 										alt="Air Tracker BG"
